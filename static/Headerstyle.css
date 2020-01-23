@@ -1,0 +1,273 @@
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: #5c5d6378 !important;
+}
+.header {
+  background-color: #fff !important;
+}
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+html,
+body {
+  /* Adjust font size */
+  -webkit-text-size-adjust: 100%;
+  /* Font varient */
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  /* Smoothing */
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  font-family: "Lato", sans-serif;
+  background: #f9fafe;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Lato", sans-serif;
+}
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Parent dashboard container */
+.dashboard-container {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  display: grid;
+  grid-template-columns: 200px 300px;
+  grid-template-rows: 200px 600px 300px;
+  /* grid-template-areas:
+    "header header"
+    "sidebar main"
+    "sidebar footer"; */
+}
+/* Dashboard navbar */
+.dashboard-navbar {
+  position: absolute;
+  width: 100%;
+  height: 55px;
+  top: 0;
+  background: #fff;
+  box-shadow: 0px 2px 6px 1px #00000017;
+  z-index: 2;
+}
+.navbar-head-brand a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  color: #cbcbcb;
+}
+/* change the navbar title hover color */
+.navbar-head-brand a:hover {
+  color: #0063a2;
+}
+/* End dashboard navbar */
+
+/* Dashboard body */
+.dashboard-body {
+  position: absolute;
+  width: 100%;
+  top: 56px;
+  bottom: 0;
+  z-index: 1;
+}
+.dashboard-body .wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+}
+
+/* sidebar starts */
+.dashboard-body .wrapper .sidebar {
+  position: relative;
+  width: 270px;
+  background-color: #202124;
+  color: #cbcbcb;
+  transition: all 0.3s;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.dashboard-body .wrapper .sidebar.active {
+  width: 70px;
+}
+.dashboard-body
+  .wrapper
+  .sidebar
+  .sidebar-menu
+  .list-group
+  .list-group-item.divider {
+  border-top: 1px solid #888;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.dashboard-body
+  .wrapper
+  .sidebar.active
+  .sidebar-menu
+  .list-group
+  .list-group-item
+  a
+  span {
+  display: none;
+}
+.dashboard-body .wrapper .sidebar .sidebar-top {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  /* change this bottom to get the exact side bar top content height  --------- this two values are to be changed according to your requirement */
+  bottom: 155px;
+}
+.dashboard-body .wrapper .sidebar .sidebar-bottom {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  /* change this height to get the exact side bar bottom content height  --------- this two values are to be changed according to your requirement */
+  height: 155px;
+}
+.dashboard-body .wrapper .sidebar .sidebar-menu {
+  margin-top: 5px;
+}
+.dashboard-body .wrapper .sidebar .sidebar-menu .list-group {
+  border: none;
+  background: transparent;
+}
+.dashboard-body .wrapper .sidebar .sidebar-menu .list-group .list-group-item {
+  border: none;
+  border-radius: 0px;
+  padding: 0px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  text-transform: capitalize;
+  background: transparent;
+  color: #cbcbcb;
+  width: 247px;
+  overflow: hidden;
+}
+.dashboard-body .wrapper .sidebar .sidebar-menu .list-group .list-group-item a {
+  display: block;
+  padding: 8px 0px 8px 25px;
+  text-decoration: none;
+  color: #cbcbcb;
+  border-left: 3px solid transparent;
+}
+.dashboard-body
+  .wrapper
+  .sidebar
+  .sidebar-menu
+  .list-group
+  .list-group-item
+  a
+  i {
+  width: 18px;
+  text-align: center;
+}
+.dashboard-body
+  .wrapper
+  .sidebar
+  .sidebar-menu
+  .list-group
+  .list-group-item
+  a.active {
+  border-left: 3px solid #cbcbcb;
+}
+.dashboard-body
+  .wrapper
+  .sidebar
+  .sidebar-menu
+  .list-group
+  .list-group-item:hover {
+  background-color: #202124;
+}
+.dashboard-body
+  .wrapper
+  .sidebar
+  .sidebar-menu
+  .list-group
+  .list-group-item:hover
+  a {
+  border-left: 3px solid #cbcbcb;
+}
+.dashboard-body
+  .wrapper
+  .sidebar
+  .sidebar-menu
+  .list-group
+  .list-group-item
+  span {
+  margin-left: 7px;
+}
+/* sidebar ends */
+
+/* content starts */
+.dashboard-body .wrapper .content {
+  width: 100%;
+  transition: all 0.3s;
+  position: relative;
+  background: #fafafa;
+  padding-top: 10px;
+  overflow-y: auto;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+/* content ends */
+
+ul.list-group {
+  margin-left: -49px;
+}
+@media (max-width: 767px) {
+  .dashboard-body .wrapper {
+    display: block;
+  }
+  .dashboard-body .wrapper .sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 200;
+    width: 247px;
+  }
+  .dashboard-body .wrapper .sidebar.active {
+    width: 70px;
+  }
+  .dashboard-body .wrapper .content {
+    padding-left: 80px;
+  }
+  .dashboard-body
+    .wrapper
+    .sidebar
+    .sidebar-menu
+    .list-group
+    .list-group-item
+    a {
+    padding-left: 22px;
+  }
+  .dashboard-body .wrapper .content .content-heading-container .content-border {
+    width: 50%;
+  }
+  .navbar-pills-container ul li .btn {
+    padding: 5px 7px;
+  }
+  .date-from-item:last-child {
+    border-left: 1px solid #ccc;
+  }
+  .greater-than {
+    display: none;
+  }
+}
+/* End dashboard body */
+/* End parent dashboard container */
+/*Grid styles*/
+.header {
+  background-color: #f8f9fd !important;
+  grid-area: header;
+}
+.sidebar {
+  background-color: #fff !important;
+  grid-area: sidebar;
+}
+.main {
+  background-color: #f8f9fd !important;
+  grid-area: main;
+}
